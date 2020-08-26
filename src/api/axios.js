@@ -23,7 +23,12 @@ instance.interceptors.response.use(
   },
   function (error) {
     // 对响应错误做点什么
-    return Promise.reject(error)
+    if(error.response.status == 401){
+        location.href = "/login"
+    }else{
+      return Promise.reject(error)
+    }
+    
   }
 )
 

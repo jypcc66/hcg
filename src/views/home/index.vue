@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <el-scrollbar wrap-class="scrollbar-wrapper">
+    <el-scrollbar id="nav" wrap-class="scrollbar-wrapper">
       <el-menu
         :show-timeout="200"
         :default-active="$route.path"
@@ -9,7 +9,6 @@
         text-color="#bfcbd9"
         active-text-color="#409EFF"
       >
-        <div id="nav">
           <el-menu
             default-active="2"
             class="el-menu-vertical-demo"
@@ -33,8 +32,8 @@
                 <span>商品</span>
               </template>
               <el-menu-item-group>
-                <el-menu-item index="1-1" @click="link('/goods')">商品列表</el-menu-item>
-                <el-menu-item index="1-2" @click="link('/goods/evaluationList')">商品评价</el-menu-item>
+                <el-menu-item index="2-1" @click="link('/goods')">商品列表</el-menu-item>
+                <el-menu-item index="2-2" @click="link('/goods/evaluationList')">商品评价</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
             <el-submenu index="3">
@@ -43,7 +42,7 @@
                 <span>订单</span>
               </template>
               <el-menu-item-group>
-                <el-menu-item index="1-1" @click="link('/order/list')">订单列表</el-menu-item>
+                <el-menu-item index="3-1" @click="link('/order/list')">订单列表</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
             <el-submenu index="4">
@@ -52,9 +51,9 @@
                 <span>仓库</span>
               </template>
               <el-menu-item-group>
-                <el-menu-item index="1-1" @click="link('/warehouse')">仓库管理</el-menu-item>
-                <el-menu-item index="1-2" @click="link('/warehouse/warehousing')">入库管理</el-menu-item>
-                <el-menu-item index="1-3" @click="link('/warehouse/warehousingLocation')">库存管理</el-menu-item>
+                <el-menu-item index="4-1" @click="link('/warehouse')">仓库管理</el-menu-item>
+                <el-menu-item index="4-2" @click="link('/warehouse/warehousing')">入库管理</el-menu-item>
+                <el-menu-item index="4-3" @click="link('/warehouse/warehousingLocation')">库存管理</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
             <el-submenu index="5">
@@ -63,9 +62,9 @@
                 <span>优惠券</span>
               </template>
               <el-menu-item-group>
-                <el-menu-item index="1-1" @click="link('/couponlist')">优惠券列表</el-menu-item>
-                <el-menu-item index="1-2" @click="link('/couponList/add')">新建优惠券</el-menu-item>
-                <el-menu-item index="1-2" @click="link('/couponList/setting')">推送优惠券配置</el-menu-item>
+                <el-menu-item index="5-1" @click="link('/couponlist')">优惠券列表</el-menu-item>
+                <el-menu-item index="5-2" @click="link('/couponList/add')">新建优惠券</el-menu-item>
+                <el-menu-item index="5-2" @click="link('/couponList/setting')">推送优惠券配置</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
             <el-submenu index="6">
@@ -74,13 +73,12 @@
                 <span>跨境</span>
               </template>
               <el-menu-item-group>
-                <el-menu-item index="1-1" @click="link('/cross/product')">商品备案</el-menu-item>
-                <el-menu-item index="1-2" @click="link('/cross/order')">订单申报</el-menu-item>
-                <el-menu-item index="1-3" @click="link('/cross/table')">商品列表-表格</el-menu-item>
+                <el-menu-item index="6-1" @click="link('/cross/product')">商品备案</el-menu-item>
+                <el-menu-item index="6-2" @click="link('/cross/order')">订单申报</el-menu-item>
+                <el-menu-item index="6-3" @click="link('/cross/table')">商品列表-表格</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
           </el-menu>
-        </div>
       </el-menu>
     </el-scrollbar>
 
@@ -102,7 +100,7 @@ export default {
 <style lang="scss">
   .scrollbar-wrapper {
       overflow-x: hidden !important;
-
+      height: 100%;
       .el-scrollbar__view {
         height: 100%;
       }
@@ -111,4 +109,5 @@ export default {
     .el-scrollbar__bar.is-vertical {
       right: 0px;
     }
+    
 </style>
